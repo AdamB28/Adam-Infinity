@@ -86,14 +86,14 @@ print("The result was {}".format(result)) # We can call outside variables
 print("The result was {r}".format(r = result)) # We can have variables of our variables in functions
 
 # Float formatting follows "{value:width.precision f}"
-
 result = 829/1000 * 100
 print("The result was {r}".format(r = result))
 print("The result was {r:1.1f}".format(r = result))
 
 # There is a newer method using fstrings
-
 name = 'Mobius'
 rank_number = 118
 print (f'{name} is number {rank_number}.') # The integer was allowed in the string
 
+# Another weird way of doing it
+'Python %s!' %'rules' # Seems to be a less desirable method of inserting a string
