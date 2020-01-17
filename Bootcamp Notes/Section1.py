@@ -86,14 +86,47 @@ print("The result was {}".format(result)) # We can call outside variables
 print("The result was {r}".format(r = result)) # We can have variables of our variables in functions
 
 # Float formatting follows "{value:width.precision f}"
-
 result = 829/1000 * 100
 print("The result was {r}".format(r = result))
 print("The result was {r:1.1f}".format(r = result))
 
 # There is a newer method using fstrings
-
 name = 'Mobius'
 rank_number = 118
 print (f'{name} is number {rank_number}.') # The integer was allowed in the string
 
+# Another weird way of doing it
+'Python %s!' %'rules' # Seems to be a less desirable method of inserting a string
+
+# We looked at lists
+my_list = [1,2,3]
+my_list = ['STRING',100,26.5] # We can have multiple object types in a list
+len(my_list) # Gives us the amount of items
+my_list[0] # Calls an item
+
+my_list = ['one', 'two', 'three']
+another_list = ['four', 'five']
+new_list = my_list + another_list # We can concatenate lists
+print(new_list)
+
+new_list[0] = 'ONE' # We can mutate a list unlike a string
+
+new_list.append('six') # Used for appending a list
+print(new_list)
+
+new_list.pop() # Pops out the last number as output
+popped_item = new_list.pop() # Thus we can use it as a variable input
+print(popped_item)
+
+new_list.pop(0) # We can pop out using positions
+
+# We looked at how to sort lists and None types
+
+num_list = [5,2,7,3,9,1,3,4,6,8]
+num_list.sort() # Provides no output so can't be used as a variable
+sorted_list = new_list.sort()
+print(sorted_list) # This will print 'None'
+print(num_list) # This however is sorted
+
+num_list.reverse() # This does a reverse sort
+print(num_list)
