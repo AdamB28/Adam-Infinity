@@ -121,7 +121,6 @@ print(popped_item)
 new_list.pop(0) # We can pop out using positions
 
 # We looked at how to sort lists and None types
-
 num_list = [5,2,7,3,9,1,3,4,6,8]
 num_list.sort() # Provides no output so can't be used as a variable
 sorted_list = new_list.sort()
@@ -130,3 +129,147 @@ print(num_list) # This however is sorted
 
 num_list.reverse() # This does a reverse sort
 print(num_list)
+
+# We can use maths operations on lists
+
+list0 = [0]
+list0 = list0 * 3
+print(list0)
+list1 = [0] * 3
+print(list1)
+
+# We then looked at dictionaries
+my_dict = {'key1':'value1', 'key2':'value2'} # Dictionaries use key-pair values, are unordered and can't be retrieved by key name.
+my_dict['key1'] # How to look up a key
+
+# We don't have to use strings for keys
+ace_lookup = {118:'Mobius', 108:'Blaze', 66:'Cipher', 15:'Trigger'}
+print(ace_lookup[15])
+
+# We can have lists within our dictionaries
+d = {'k1':123, 'k2':[0,1,2], 'k3':{'insideKey':100}}
+print(d['k2'])
+print(d['k2'][2]) # And we can then index them
+
+# We can also have dictionaries within our dictionaries
+d = {'k1':123, 'k2':[0,1,2], 'k3':{'insideKey':'Hello World'}}
+print(d['k3']['insideKey'])
+print(d['k3']['insideKey'].upper()) # It returns just a value, in this case a string and so can be applied relevant functions
+
+# We can add key-pairs to dictionaries
+d = {'k1':100, 'k2':200}
+d['k3'] = 300
+print(d)
+d['k1'] = 101 # We can also replace them
+print(d)
+
+# We can use various functions to call items from dictionaries
+print(d.keys())
+print(d.values())
+print(d.items())
+
+# We looked at tuples which are immutable lists
+t = (1,2,3) # Tuples use ()s
+
+# There are lot less functions for tuples
+t = ('a', 'a', 'b')
+print(t.count('a'))
+print(t.index('a')) # Note in this case it only indexes the first 'a'
+
+# Tuples are beneficial for passing around objects while making sure they don't change
+# This is good for data integrity
+
+# We can use the set function to create sets
+# Sets are unordered collections of unique elements
+# This means there can only be one representative of the same object
+
+myset = set() # Here we are setting a variable to the set function
+myset.add(1)
+myset.add(2)
+myset.add(2)
+print(myset) # Notice there is only one 2 because this varible functions as a set
+
+# We can use the set function on lists to remove duplicates
+mylist = [1,1,1,1,1,1,2,2,2,2,3,3,3,3]
+set(mylist) # Note this didn't order the items
+
+# Sets can be used on strings
+set('Mississippi')
+
+# We looked at booleans which are operators that allow you to convey True or False statements
+True # Must have capitalised first letters
+False
+1 == 1 # Will return the bool true
+1 > 2  # Will return the bool false
+n = None # We can use this for nothing
+
+# We then looked at using files with Python
+# We started with one method of opening files
+myfile = open('whoops.txt') # This won't work because the file doesn't exist
+myfile = open('myfile.txt') # This won't work because the path is wrong
+myfile = open('/Users/lonab90/Documents/GitHub/Adam-Infinity/Bootcamp Notes/myfile.txt')
+
+# The file is now opened, so we can read it
+myfile.read() # The read function displays the file as a string
+myfile.read() # Running this again returns '' because the cursor has moved through the file
+myfile.seek(0) # Returns the cursor to the beginning of the file
+myfile.read()
+myfile.seek(1) # Returned the cursor to one place in
+myfile.read()
+
+
+# We can alternatively display lines with the readlines function
+myfile.seek(0)
+myfile.readlines()
+myfile.seek(0)
+myfile.readlines()[1] # We can also use this to index
+
+# We can close the file with close function
+# This helps us avoid issues with still having files opened
+myfile.close()
+
+# There is an alternative way of opening files that will automatically close them
+with open('myfile.txt') as my_new_file:
+    contents = my_new_file.read()
+contents
+
+with open('myfile.txt', mode='r') as myfile:
+    contents = myfile.read()
+contents # Opens file as read only
+
+with open('myfile.txt', mode='w') as myfile:
+    contents = myfile.read() # Opens as write only so can't run the read function
+
+# There are multiple ways of opening files
+
+"""
+mode='r' is read only
+mode='w' is write only (will overwrite files or create new!)
+mode='a' is append only
+mode='r+' is reading and writing
+mode='w+' is writing and reading
+"""
+
+# We can create files using python
+with open('created.txt', mode='w') as f:
+    f.write('I CREATED THIS FILE!')
+with open('created.txt',mode='r') as f:
+    print(f.read())
+
+# Extra Hard Examples!
+
+d = {'simple_key':'hello'}
+# Grab 'hello'
+print(d['simple_key'])
+
+# Grab 'hello' again
+d = {'k1':{'k2':'hello'}}
+print(d['k1']['k2'])
+
+# Getting a little tricker
+d = {'k1':[{'nest_key':['this is deep',['hello']]}]}
+print(d['k1'][0]['nest_key'][1])
+
+# This will be hard and annoying!
+d = {'k1':[1,2,{'k2':['this is tricky',{'tough':[1,2,['hello']]}]}]}
+print(d['k1'][2]['k2'][1]['tough'][2])
