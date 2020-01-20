@@ -207,7 +207,7 @@ n = None # We can use this for nothing
 # We started with one method of opening files
 myfile = open('whoops.txt') # This won't work because the file doesn't exist
 myfile = open('myfile.txt') # This won't work because the path is wrong
-myfile = open('/Users/lonab90/Documents/GitHub/Adam-Infinity/Bootcamp Notes/myfile.txt')
+myfile = open('/Users/*******/Documents/GitHub/Adam-Infinity/Bootcamp Notes/myfile.txt')
 
 # The file is now opened, so we can read it
 myfile.read() # The read function displays the file as a string
