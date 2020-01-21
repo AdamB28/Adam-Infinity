@@ -273,3 +273,43 @@ print(d['k1'][0]['nest_key'][1])
 # This will be hard and annoying!
 d = {'k1':[1,2,{'k2':['this is tricky',{'tough':[1,2,['hello']]}]}]}
 print(d['k1'][2]['k2'][1]['tough'][2])
+
+# Section 1.2 - Python Comparison Operators
+# We can use comparison operators to evaluate expressions
+print(2 == 2) # Will return True
+print (2 == 3) # Will return False
+
+# 2 = 2 will make Python think you are attempting to assign a variable
+# We can also apply comparison operators to strings
+'Hello' == 'Hello' # Will return True
+'Hello' == 'hello' # Will return False as it is case sensitive
+'2' == 2 # Will return False as the string isn't counted as a number
+2.0 == 2 # Will however return True
+
+# We use != for inequality
+3 != 4 # Will return True
+3 != 3 # Will return False
+
+# We can use < and >s
+2 > 1 # Will return True
+2 < 1 # Will return False
+2 >= 2 # We can add an = for greater or equal to
+2 <= 1 # And for less or equal than 
+
+# We can write longer expressions
+1 < 2 < 3 # Will return True
+1 < 2 > 3 # Will return False
+
+# We can use the above method, but we can also use logical operators
+1 < 2 and 2 < 3 # Will return True as both are true
+1 < 2 and 2 > 3 # Will return False as both need to be true for a True boolean
+'A' == 'A' and 5 == 5.0 # We can combine data types this way
+('B' == 'B') and (15 == 15.0) # We can use ()s for readability
+
+1 == 1 or 1 == 2 # Returns True as only one operation needs to be true
+not 1 == 1 # Returns False
+not (2 == 2) # We can use ()s again for readability
+
+Jean = 'Moaner'
+Janine = 'Moaner'
+Jean == Janine # Returns True meaning we can use variables
