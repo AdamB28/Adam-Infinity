@@ -59,6 +59,6 @@ name = 'Adam'
 print(len(name))
 
 if len(name) > 0:
-    print('Welcome ', name + '!')
+    print('Welcome', name + '!')
 else:
     print('Welcome stranger!')
