@@ -96,7 +96,7 @@ rank_number = 118
 print (f'{name} is number {rank_number}.') # The integer was allowed in the string
 
 # Another weird way of doing it
-'Python %s!' %'rules' # Seems to be a less desirable method of inserting a string
+'Python %s!' %'rules' # %s seems to be a less desirable method of inserting a string
 
 # We looked at lists
 my_list = [1,2,3]
