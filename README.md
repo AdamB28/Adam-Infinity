@@ -7,3 +7,5 @@ Welcome to my Python repository __Adam-Infinity__ where I write Python scripts f
 #### Section 1.2 Python Comparison Operators
 
 ### Section 2: Python Statements
+
+### Section 3: Methods and Functions
